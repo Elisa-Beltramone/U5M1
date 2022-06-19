@@ -1,0 +1,31 @@
+<span>Hola {{usuario}}</span>
+<a href="/admin/login/logout" class="btn btm-danger">Cerrar sesión <i class="fasfa-sign-out-alt"></i></a>
+<h2>Listado de novedades</h2>
+<a href="" class="btn btn-sucess"><i class="fas fa-plus"></i> Nuevo</a>
+
+{{!-- tabla --}}
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Titulo</th>
+          <th scope="col" class="text-center">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each novedades}}
+        <tr>
+          <th scope="row">{{id}}</th>
+          <td>{{titulo}}</td>
+          <td class="text-right">
+            <a href="#" class="btn btn-secondary"> <i class="fas fa-pencil-alt></i>"></i></a>
+            <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-secondary"><i class="fas fa-trash"></i></a>
+          </td>
+          {{/each}}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

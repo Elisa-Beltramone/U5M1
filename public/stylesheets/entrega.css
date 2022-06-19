@@ -1,0 +1,15 @@
+
+.hero{
+    background: url(../images/flores.JPG) no-repeat;
+    background-size: cover;
+    height: 0.5vh;
+    min-height: 450px;
+}
+
+img{
+    width: 200px;
+}
+
+.lista-novedades{
+    
+}
