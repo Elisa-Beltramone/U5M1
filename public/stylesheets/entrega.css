@@ -6,10 +6,15 @@
     min-height: 450px;
 }
 
-img{
+.img{
     width: 200px;
 }
 
 .lista-novedades{
+    width: 20px;
+    
+}
+
+.imgnovedades {
     
 }
