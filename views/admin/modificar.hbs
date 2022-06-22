@@ -1,0 +1,24 @@
+<h3 class="text-center">Modificar la novedad</h3>
+<div class="container" style="margin-top: 100px; auto">
+    <form action="/admin/novedades/modificar" method="post">
+        <input type="hidden" value="{{novedad.id}}" name="id">
+
+        <div class="mb-3">
+            <label for="">Titulo</label>
+            <input type="text" class="form-control" name="titulo" value="{{novedad.titulo}}">
+        </div>
+        <div class="mb-3">
+            <label for="">Subtitulo</label>
+            <textarea type="text" class="form-control" name="subtitulo">{{novedad.subtitulo}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="">Cuerpo</label>
+            <textarea type="text" class="form-control" name="cuerpo" >{{novedad.cuerpo}}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Modificar</button>
+    </form>
+    {{#if error}}
+    <p>{{message}}</p>
+    {{/if}}
+</div>
