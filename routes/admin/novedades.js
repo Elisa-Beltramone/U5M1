@@ -43,6 +43,12 @@ router.get('/', async function (req, res, next) {
 
 router.get("/eliminar/:id", async (req, res, next) => {
   var id = req.params.id;
+
+  let novedad = await novedadesModel.getNovedadById(id);
+  if (novedad.imgid) {
+    await (destroy(novedad.imgid));
+  }
+
   await novedadesModel.deleteNovedadesById(id);
   res.redirect("/admin/novedades")
 });
