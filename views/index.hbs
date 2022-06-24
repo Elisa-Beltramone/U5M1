@@ -85,7 +85,7 @@
     <h3>Novedades</h3>
     <ul class="lista-novedades">
       {{#each novedades}}
-      <li> <a href="javascript:void(0);" data-toggle="modal" data-target="#modal{{id}}"><img src="/images/flores2.JPG"
+      <li> <a href="javascript:void(0);" data-toggle="modal" data-target="#modal{{id}}"><img src="{{imagen}}"
             class="d-block w-50"><strong> {{titulo}}</strong></a></li>
       {{/each}}
     </ul>
@@ -102,6 +102,7 @@
           </div>
           <div class="modal-body">
             <h6>{{subtitulo}}</h6>
+            <img src="{{imagen}}" alt="">
             <p>{{cuerpo}}</p>
           </div>
           {{!-- <div class="modal-footer">

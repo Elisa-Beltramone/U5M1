@@ -1,6 +1,6 @@
 <h3 class="text-center">Agregar una novedad</h3>
 <div class="container" style="margin-top: 100px; auto">
-    <form action="/admin/novedades/agregar" method="post">
+    <form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <input type="text" class="form-control" placeholder="Titulo" name="titulo">
         </div>
@@ -9,6 +9,9 @@
         </div>
         <div class="mb-3">
             <textarea type="text" class="form-control" placeholder="Cuerpo" name="cuerpo"></textarea>
+        </div>
+        <div class="mb-3">
+            <input type="file" class="form-control" name="imagen" id="imagen">
         </div>
 
         <button type="submit" class="btn btn-primary">Guardar</button>

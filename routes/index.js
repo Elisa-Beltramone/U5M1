@@ -1,21 +1,44 @@
-const { useColors } = require('debug/src/browser');
+// const { useColors } = require('debug/src/browser');
 var express = require('express');
-const async = require('hbs/lib/async');
+// const async = require('hbs/lib/async');
 var router = express.Router();
 
 var nodemailer = require("nodemailer");
 
 var novedadesModel = require("../modelos/novedadesModel");
 
+var cloudinary = require("cloudinary").v2;
+
 /* GET home page. */
 router.get('/', async function(req, res, next) {
 
-  var novedades = await novedadesModel.getNovedades()
+  var novedades = await novedadesModel.getNovedades();
+
+  novedades = novedades.splice(0,5); 
+  novedades = novedades.map(novedad => {
+    if (novedad.imgid) {
+      const imagen = cloudinary.url(novedad.imgid, {
+        width: 200,
+        crop: "fill"
+      });
+      return {
+        ...novedad,
+        imagen
+      }
+    } else {
+        return {
+          ...novedad,
+          imagen: "/images/noimage.jpg"
+        }
+      }
+  });
+
 
   res.render('index', {
     novedades
   });
 });
+
 
 
 router.post('/', async (req, res, next) => {
