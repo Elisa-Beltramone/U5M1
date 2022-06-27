@@ -15,6 +15,7 @@ router.get('/', async function(req, res, next) {
   var novedades = await novedadesModel.getNovedades();
 
   novedades = novedades.splice(0,5); 
+
   novedades = novedades.map(novedad => {
     if (novedad.imgid) {
       const imagen = cloudinary.url(novedad.imgid, {

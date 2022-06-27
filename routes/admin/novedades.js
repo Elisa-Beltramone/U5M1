@@ -1,5 +1,5 @@
 var express = require('express');
-// const pool = require('../../modelos/bd');
+const pool = require('../../modelos/bd');
 var router = express.Router();
 var novedadesModel = require("../../modelos/novedadesModel");
 var util = require("util");
